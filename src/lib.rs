@@ -22,6 +22,10 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
   println!("With text:\n{}", contents);
 
+  for line in search(&config.query, &contents) {
+    println!("{}", line);
+  }
+
   Ok(())
 }
 
